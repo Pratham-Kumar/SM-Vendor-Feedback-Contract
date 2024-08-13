@@ -1,0 +1,272 @@
+<mvc:View
+    controllerName="com.kpo.smvendorfeedbackcontractfiori.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:upload="sap.m.upload"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <uxap:ObjectPageLayout
+                id="ObjectPageLayout"
+                upperCaseAnchorBar="false"
+                showAnchorBar="true"
+                enableLazyLoading="true"
+            >
+                <uxap:sections>
+                    <uxap:ObjectPageSection
+                        id="_IDGenObjectPageSection1"
+                        showTitle="false"
+                    >
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection1"
+                                title="General Info "
+                            >
+                                <uxap:blocks>
+                                    <HBox>
+                                        <VBox>
+                                            <Label
+                                                id="_IDGenLabel1"
+                                                text="Contractor Name"
+                                                class="sapUiTinyMarginEnd"
+                                            />
+                                            <Input
+                                                id="_IDGenInput1"
+                                                value=""
+                                                required="true"
+                                            />
+
+                                            <Label
+                                                id="_IDGenLabel2"
+                                                text="Contractor Code/Number"
+                                            />
+                                            <Input
+                                                id="_IDGenInput2"
+                                                value=""
+                                                required="true"
+                                                showValueHelp="true"
+                                            />
+                                            <Label
+                                                id="_IDGenLabel9"
+                                                text="Contract Owner "
+                                            />
+                                            <Input
+                                                id="_IDGenInput3"
+                                                value=""
+                                                required="true"
+                                            />
+                                        </VBox>
+                                    </HBox>
+                                    <HBox>
+                                        <VBox>
+                                            <Label
+                                                id="_IDGenLabel3"
+                                                text="Contract Number"
+                                            />
+                                            <Input
+                                                id="_IDGenInput4"
+                                                value=""
+                                                required="true"
+                                                showValueHelp="true"
+                                            />
+                                            <Label
+                                                id="_IDGenLabel4"
+                                                text="Contract Description"
+                                            />
+                                            <Input
+                                                id="_IDGenInput5"
+                                                value=""
+                                            />
+                                            <Label
+                                                id="_IDGenLabel5"
+                                                text="FPAL Code"
+                                            />
+                                            <Input
+                                                id="_IDGenInput6"
+                                                value=""
+                                                showValueHelp="true"
+                                            />
+                                        </VBox>
+                                    </HBox>
+                                    <HBox>
+                                        <VBox>
+                                            <Label
+                                                id="_IDGenLabel6"
+                                                text="Contract Duration"
+                                            />
+                                            <DatePicker
+                                                id="_IDGenInput7"
+                                                value=""
+                                            />
+                                            <Label
+                                                id="_IDGenLabel7"
+                                                text="Date of Report"
+                                            />
+                                            <DatePicker
+                                                id="_IDGenInput8"
+                                                value=""
+                                            />
+                                            <Label
+                                                id="_IDGenLabel8"
+                                                text="Contract Close out"
+                                            />
+                                            <DatePicker
+                                                id="_IDGenInput9"
+                                                value=""
+                                            />
+                                        </VBox>
+                                    </HBox>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection2"
+                                title="Section Table"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        items="{jModel>/}"
+                                        id="t1"
+                                        class=""
+                                    >
+                                        <!-- <headerToolbar>
+                                            <OverflowToolbar
+                                                id="_IDGenOverflowToolbar1"
+                                            >
+                                                <Title
+                                                    id="_IDGenTitle1"
+                                                    text=""
+                                                />
+                                                <ToolbarSpacer
+                                                    id="_IDGenToolbarSpacer1"
+                                                />
+                                                <Button
+                                                    id="_IDGenButton1"
+                                                    icon="sap-icon://add"
+                                                    press="onAddItemPressApprover"
+                                                />
+                                                <Button
+                                                    id="_IDGenButton2"
+                                                    icon="sap-icon://delete"
+                                                    press="onDeleteItemPressApprover"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar> -->
+
+                                        <columns>
+                                            <Column id="c1">
+                                                <Text
+                                                    text="Section"
+                                                    id="txt1"
+                                                />
+                                            </Column>
+                                            <Column id="c2">
+                                                <Text
+                                                    text=""
+                                                    id="txt2"
+                                                />
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem
+                                                id="_IDGenColumnListItem1"
+                                                vAlign="Middle"
+                                            >
+                                                <cells>
+                                                    <Text
+                                                        id="_IDGenInput10"
+                                                        text="{path: 'jModel>section',formatter: '.i18nFormatter'}"
+                                                    />
+                                                    <TextArea
+                                                        id="_IDGenTextArea1"
+                                                        value=""
+                                                        width="20rem"
+                                                    />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection3"
+                                title="Attachments"
+                            >
+                                <uxap:blocks>
+                                    <upload:UploadSet
+                    id="uploadSet"
+                    instantUpload="true"
+                    uploadEnabled="true"
+                    afterItemAdded="onAfterItemAdded"
+                    uploadCompleted="onUploadCompleted"            
+                    items="{
+                        path: '/Files',
+                        parameters: {
+                            $orderby: 'createdAt desc'
+                        },
+                        templateShareable: false}"
+                >
+                    
+                    <upload:items>
+                        <upload:UploadSetItem
+                            fileName="{fileName}"
+                            mediaType="{mediaType}"
+                            url="{url}"
+                            enabledEdit="false"
+                            visibleEdit="false"
+                            openPressed="onOpenPressed"
+                        >
+                            <upload:attributes>
+                                <ObjectAttribute
+                                    title="Uploaded By"
+                                    text="{createdBy}"
+                                    active="false"
+                                />
+                                <ObjectAttribute
+                                    title="Uploaded on"
+                                    text="{createdAt}"
+                                    active="false"
+                                />
+                                <ObjectAttribute
+                                    title="File Size"
+                                    text="{size}"
+                                    active="false"
+                                />
+                            </upload:attributes>
+                        </upload:UploadSetItem>
+                    </upload:items>
+                </upload:UploadSet>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                </uxap:sections>
+            </uxap:ObjectPageLayout>
+        </content>
+        <footer>
+            <OverflowToolbar id="_IDGenOverflowToolbar2">
+                <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+                <Button
+                    id="_IDGenButton7"
+                    text="Submit"
+                    press="onSubmit"
+                />
+                <Button
+                    id="_IDGenButton8"
+                    text="Cancel"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
