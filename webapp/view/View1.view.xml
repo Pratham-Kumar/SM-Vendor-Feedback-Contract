@@ -34,6 +34,14 @@
                                 <uxap:blocks>
                                     <HBox>
                                         <VBox>
+                                        <Label
+                                                text="ID"
+                                                class="sapUiTinyMarginEnd"
+                                            />
+                                            <Input
+                                                id="uniqueId"
+                                                editable="false"
+                                            />
                                             <Label
                                                 id="_IDGenLabel1"
                                                 text="Contractor Name"
@@ -206,7 +214,7 @@
                                 <uxap:blocks>
                                     <upload:UploadSet
                     id="uploadSet"
-                    instantUpload="true"
+                    instantUpload="false"
                     uploadEnabled="true"
                     afterItemAdded="onAfterItemAdded"
                     uploadCompleted="onUploadCompleted"            
@@ -226,6 +234,9 @@
                             enabledEdit="false"
                             visibleEdit="false"
                             openPressed="onOpenPressed"
+                            visibleRemove="true"
+                            removePressed="onRemovePressed"
+                            
                         >
                             <upload:attributes>
                                 <ObjectAttribute
@@ -266,6 +277,11 @@
                     id="_IDGenButton8"
                     text="Cancel"
                 />
+                <!-- <Button
+                    id="_IDGenButton9"
+                    text="Export"
+                    press="onRemovePressedd"
+                /> -->
             </OverflowToolbar>
         </footer>
     </Page>
